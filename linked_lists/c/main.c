@@ -25,6 +25,7 @@ void printList(Node* linkedList) {
 }
 
 int main(int argc, char** argv) {
+    Node* myList = NULL;
 
     int option = -1;
     while (option != 5) {
@@ -33,18 +34,23 @@ int main(int argc, char** argv) {
         if (recvOption == 1 && option > 0 && option <= 5) {
             switch (option) {
             case 1:
-                /* code */
+                printf("Give a value to insert:\n");
+                scanf("%d", &option);
+                myList = addNode(option, myList);
                 break;
             case 2:
+                break;
             case 3:
+                break;
             case 4:
+                printList(myList);
+                break;
             case 5:
+                break;
             default:
                 break;
             }
         }
     }
-    Node* myList = NULL;
-    myList = addNode(3, myList);
     return 0;
 }
