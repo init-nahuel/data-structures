@@ -13,12 +13,13 @@ typedef struct {
  * 
  * returns: The linkedList modified with the new value added
  */
-Node* addNode(int val, Node* linkedList) {
+Node* addNode(int val, Node* head) {
     Node* newNode = malloc(sizeof(Node));
-    newNode->next = linkedList;
+    newNode->next = head;
     newNode->val = val;
 
-    linkedList = newNode;
+    head = newNode;
     
-    return linkedList;
+    return head;
 }
+
