@@ -6,8 +6,8 @@ typedef struct {
 } Node;
 
 /**
- * Add a new node with a value to a linked list
- * --------------------------------------------
+ * Add a new node with a value to the front of a linked list
+ * ---------------------------------------------------------
  * val: value for the new node to add
  * linkedList: linked list where the new node will be added
  * 
