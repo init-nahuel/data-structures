@@ -27,7 +27,7 @@ Node* addNode(int val, Node* head) {
  * Remove the node with the value val from a linked list
  * --------------------------------------------------------
  * val: value to be removed from the list
- * head: linked list from where the node will be removed
+ * linkedList: linked list from where the node will be removed
  * 
  * returns: 0 if the value was removed from the ll and 1 if was not found
 */
@@ -53,5 +53,34 @@ int removeNode(int val, Node** linkedList) {
         current = current->next;
     }
     
+    return 0;
+}
+
+/**
+ * Insert a new node in the linked list given an index
+ * ---------------------------------------------------
+ * val: value to be inserted
+ * index: index where the value must be inserted
+ * linkedList: linked list from where the node will be inserted
+ * 
+ * returns: 1 if the node was succesfully inserted and 0 if the
+ * index is out of bound
+*/
+int insertNode(int val, int index, Node** linkedList) {
+    Node* current = *linkedList;
+
+    while (current != NULL) {
+        if (index < 0) break;
+        if (index == 0) {
+            Node* newNode = malloc(sizeof(Node));
+            newNode->next = current->next;
+            current->next = newNode;
+
+            return 1;
+        }
+        current = current->next;
+        index--;
+    }
+
     return 0;
 }
