@@ -19,7 +19,7 @@ void printList(Node* linkedList) {
         printf("%d->", linkedList->val);
         linkedList = linkedList->next;
     }
-    printf("\n");
+    printf("NULL\n");
     
     return;
 }
@@ -36,18 +36,31 @@ int main(int argc, char** argv) {
             case 1:
                 printf("Give a value to insert:\n");
                 scanf("%d", &option);
-                myList = addNode(option, myList);
+                int addStatus = addNode(option, &myList);
                 break;
             case 2:
+                printf("Wich value do you want to remove?:\n");
+                scanf("%d", &option);
+                int removeStatus = removeNode(option, &myList);
+                if (!removeStatus) {
+                    printf("Element not found!\n");
+                }
                 break;
             case 3:
+                printf("Which value do you want to insert?:\n");
+                scanf("%d", &option);
+                printf("Where do you want to insert it?:\n");
+                int index = 0;
+                scanf("%d", &index);
+                int insertStatus = insertNode(option, index, &myList);
+                if (!insertStatus) {
+                    printf("Index out of bound!\n");
+                }
                 break;
             case 4:
                 printList(myList);
                 break;
             case 5:
-                break;
-            default:
                 break;
             }
         }
