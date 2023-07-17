@@ -28,6 +28,7 @@ int main(int argc, char** argv) {
     Node* myList = NULL;
 
     int option = -1;
+    int val;
     while (option != 5) {
         printMenu();
         int recvOption = scanf("%d", &option);
@@ -35,27 +36,27 @@ int main(int argc, char** argv) {
             switch (option) {
             case 1:
                 printf("Give a value to insert:\n");
-                scanf("%d", &option);
-                int addStatus = addNode(option, &myList);
+                scanf("%d", &val);
+                int addStatus = addNode(val, &myList);
                 if (!addStatus) {
                     printf("Failed adding new node!\n");
                 }
                 break;
             case 2:
                 printf("Wich value do you want to remove?:\n");
-                scanf("%d", &option);
-                int removeStatus = removeNode(option, &myList);
+                scanf("%d", &val);
+                int removeStatus = removeNode(val, &myList);
                 if (!removeStatus) {
                     printf("Element not found!\n");
                 }
                 break;
             case 3:
                 printf("Which value do you want to insert?:\n");
-                scanf("%d", &option);
+                scanf("%d", &val);
                 printf("Where do you want to insert it?:\n");
                 int index = 0;
                 scanf("%d", &index);
-                int insertStatus = insertNode(option, index, &myList);
+                int insertStatus = insertNode(val, index, &myList);
                 if (!insertStatus) {
                     printf("Index out of bound!\n");
                 }
