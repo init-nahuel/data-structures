@@ -37,6 +37,9 @@ int main(int argc, char** argv) {
                 printf("Give a value to insert:\n");
                 scanf("%d", &option);
                 int addStatus = addNode(option, &myList);
+                if (!addStatus) {
+                    printf("Failed adding new node!\n");
+                }
                 break;
             case 2:
                 printf("Wich value do you want to remove?:\n");
