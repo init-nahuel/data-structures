@@ -33,7 +33,7 @@ int addNode(int val, Node** linkedList) {
  * val: value to be removed from the list
  * linkedList: linked list from where the node will be removed
  * 
- * returns: 0 if the value was removed from the ll and 1 if was not found
+ * returns: 1 if the value was removed succesfully from the list and 0 otherwise
 */
 int removeNode(int val, Node** linkedList) {
     Node* head = *linkedList; 
@@ -44,6 +44,7 @@ int removeNode(int val, Node** linkedList) {
         if (current->val == val) {
             if (current == head) {
                 head = current->next;
+                *linkedList = head;
             } else {
                 prev->next = current->next;
                 free(current);
