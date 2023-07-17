@@ -9,18 +9,22 @@ typedef struct {
  * Add a new node with a value to the front of a linked list
  * ---------------------------------------------------------
  * val: value for the new node to add
- * head: linked list where the new node will be added
+ * linkedList: linked list where the new node will be added
  * 
- * returns: The linkedList modified with the new value added
+ * returns: 1 if the new node was succesfully added and 0 otherwise
  */
-Node* addNode(int val, Node* head) {
+int addNode(int val, Node** linkedList) {
     Node* newNode = malloc(sizeof(Node));
+
+    if (newNode == NULL) return 0;
+
+    Node* head = *linkedList;
     newNode->next = head;
     newNode->val = val;
 
-    head = newNode;
+    *linkedList = newNode;
     
-    return head;
+    return 1;
 }
 
 /**
@@ -42,10 +46,10 @@ int removeNode(int val, Node** linkedList) {
                 head = current->next;
             } else {
                 prev->next = current->next;
+                free(current);
+                current = NULL;
             }
             
-            free(current);
-            current = NULL;
             return 1;
         }
 
