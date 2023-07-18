@@ -8,3 +8,6 @@
 
 # python animation modules env
 animation_env
+
+# python cache files
+__pycache__
