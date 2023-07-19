@@ -14,4 +14,4 @@ Here you can see the linked list implementation for different programming langua
 
 This operation append a new node at the front of the head of the list.
 
-![Add Node](AnimatedAddNodeToLinkedList.gif)
+![Add Node](./addNode.gif)
