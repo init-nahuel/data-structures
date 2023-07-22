@@ -17,3 +17,9 @@ This operation append a new node at the front of the head of the list.
 ![addNode](../../animations/ds_animations/linked_list/addNode.gif)
 
 As you can see it is possible to insert repetitive values on a linked list without problem.
+
+## Remove Node
+
+This operation removes a node from the list, starts the search from the beggining of the list till found the target node, then removes it and makes the previous node point to the next node were the removed node was pointing.
+
+![removeNode](../../animations/ds_animations/linked_list/removeNode.gif)
